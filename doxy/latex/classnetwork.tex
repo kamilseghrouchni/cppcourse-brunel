@@ -1,0 +1,174 @@
+\hypertarget{classnetwork}{}\section{network Class Reference}
+\label{classnetwork}\index{network@{network}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnetwork_aac44f197a402ad67d1e7b266221bcca4}{network} (bool)
+\begin{DoxyCompactList}\small\item\em Class that creates the Neuron System. \end{DoxyCompactList}\item 
+\hyperlink{classnetwork_a37b843338509d5a411b3efe2b702da15}{$\sim$network} ()
+\begin{DoxyCompactList}\small\item\em Network destructor. \end{DoxyCompactList}\item 
+Systemenerveux \hyperlink{classnetwork_af0a14e17b85528ee182e35127de7e2b5}{get\+Systme\+Nerveux} () const
+\begin{DoxyCompactList}\small\item\em Returns the Neuron\+System. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_acf46b197f5e56df426dc3f105add3e97}{set\+Connections} ()
+\begin{DoxyCompactList}\small\item\em Set connections between each neuron. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_af9105fac7338bbd113d0823f837cf217}{set\+Neuronal\+Systeme} ()
+\begin{DoxyCompactList}\small\item\em Sets the Neuronal Systeme. \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_a6dda83ae384498619f0aa876639b2c25}{set\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em set the Parameters of each Neurons \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_adec3ef8128235b2dc6d4d9df34e211b7}{set\+Flag} (bool)
+\begin{DoxyCompactList}\small\item\em sets the flag \end{DoxyCompactList}\item 
+void \hyperlink{classnetwork_a89f606204aa98943271e29f12b95f1ff}{update} (long)
+\begin{DoxyCompactList}\small\item\em Updates every neuron. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnetwork_aac44f197a402ad67d1e7b266221bcca4}\label{classnetwork_aac44f197a402ad67d1e7b266221bcca4}} 
+\index{network@{network}!network@{network}}
+\index{network@{network}!network@{network}}
+\subsubsection{\texorpdfstring{network()}{network()}}
+{\footnotesize\ttfamily network\+::network (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Class that creates the Neuron System. 
+
+Handles Neurons and their connections
+
+
+\begin{DoxyParams}{Parameters}
+{\em Neurone\+System} & vectors that contains pointers of all the Neurons simulation\+Network constructor\\
+\hline
+\end{DoxyParams}
+creates a Neuronal System depending on the user\textquotesingle{}s will the background noise of each neuron is flagged with a booleen object Sets the Parameters of the Neuron System Sets the Connections between each Neuron 
+\begin{DoxyParams}{Parameters}
+{\em object} & type booleen \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_a37b843338509d5a411b3efe2b702da15}\label{classnetwork_a37b843338509d5a411b3efe2b702da15}} 
+\index{network@{network}!````~network@{$\sim$network}}
+\index{````~network@{$\sim$network}!network@{network}}
+\subsubsection{\texorpdfstring{$\sim$network()}{~network()}}
+{\footnotesize\ttfamily network\+::$\sim$network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Network destructor. 
+
+Handles the Neuron pointers of the Neuron System proper destruction 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnetwork_af0a14e17b85528ee182e35127de7e2b5}\label{classnetwork_af0a14e17b85528ee182e35127de7e2b5}} 
+\index{network@{network}!get\+Systme\+Nerveux@{get\+Systme\+Nerveux}}
+\index{get\+Systme\+Nerveux@{get\+Systme\+Nerveux}!network@{network}}
+\subsubsection{\texorpdfstring{get\+Systme\+Nerveux()}{getSystmeNerveux()}}
+{\footnotesize\ttfamily Systemenerveux network\+::get\+Systme\+Nerveux (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the Neuron\+System. 
+
+\begin{DoxyReturn}{Returns}
+object type Vector of Neuron 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_acf46b197f5e56df426dc3f105add3e97}\label{classnetwork_acf46b197f5e56df426dc3f105add3e97}} 
+\index{network@{network}!set\+Connections@{set\+Connections}}
+\index{set\+Connections@{set\+Connections}!network@{network}}
+\subsubsection{\texorpdfstring{set\+Connections()}{setConnections()}}
+{\footnotesize\ttfamily void network\+::set\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set connections between each neuron. 
+
+this function connects randomly every neuron to 1000 Excitatory and 250 Inhibitory
+
+the uniform distribution allows us to do so
+
+the parameters of the distribution or respectively
+
+the range of Excitatory and Inhibitory Neurons
+
+\begin{DoxyReturn}{Returns}
+object type Vector of Neuron 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_adec3ef8128235b2dc6d4d9df34e211b7}\label{classnetwork_adec3ef8128235b2dc6d4d9df34e211b7}} 
+\index{network@{network}!set\+Flag@{set\+Flag}}
+\index{set\+Flag@{set\+Flag}!network@{network}}
+\subsubsection{\texorpdfstring{set\+Flag()}{setFlag()}}
+{\footnotesize\ttfamily void network\+::set\+Flag (\begin{DoxyParamCaption}\item[{bool}]{f }\end{DoxyParamCaption})}
+
+
+
+sets the flag 
+
+allows us to choose whether or not we want the background noise effect
+
+this function is mainly usefull for previous unittests
+
+it affect the class attribut to an given booleen object
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & type booleen \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classnetwork_af9105fac7338bbd113d0823f837cf217}\label{classnetwork_af9105fac7338bbd113d0823f837cf217}} 
+\index{network@{network}!set\+Neuronal\+Systeme@{set\+Neuronal\+Systeme}}
+\index{set\+Neuronal\+Systeme@{set\+Neuronal\+Systeme}!network@{network}}
+\subsubsection{\texorpdfstring{set\+Neuronal\+Systeme()}{setNeuronalSysteme()}}
+{\footnotesize\ttfamily void network\+::set\+Neuronal\+Systeme (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the Neuronal Systeme. 
+
+It creats 12500 pointers on new neurons
+
+10000 Excitatory and Inhibitory
+
+and add them to a vector called Neuronsystem
+
+\begin{DoxyReturn}{Returns}
+object type Vector of Neuron 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classnetwork_a6dda83ae384498619f0aa876639b2c25}\label{classnetwork_a6dda83ae384498619f0aa876639b2c25}} 
+\index{network@{network}!set\+Parameters@{set\+Parameters}}
+\index{set\+Parameters@{set\+Parameters}!network@{network}}
+\subsubsection{\texorpdfstring{set\+Parameters()}{setParameters()}}
+{\footnotesize\ttfamily void network\+::set\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set the Parameters of each Neurons 
+
+depending on the flag value , the function will either set the current to O
+
+or to an input \mbox{\Hypertarget{classnetwork_a89f606204aa98943271e29f12b95f1ff}\label{classnetwork_a89f606204aa98943271e29f12b95f1ff}} 
+\index{network@{network}!update@{update}}
+\index{update@{update}!network@{network}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void network\+::update (\begin{DoxyParamCaption}\item[{long}]{t }\end{DoxyParamCaption})}
+
+
+
+Updates every neuron. 
+
+calls the update function of each neuron
+
+if the neuron has spiked , the function transmit the spike to all his targets
+
+spike transmition involves a neuron function called receive
+
+the function takes the time simulation for a transmition matter
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & type long \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+network.\+h\item 
+network.\+cpp\end{DoxyCompactItemize}

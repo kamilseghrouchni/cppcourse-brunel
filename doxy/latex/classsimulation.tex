@@ -1,0 +1,84 @@
+\hypertarget{classsimulation}{}\section{simulation Class Reference}
+\label{classsimulation}\index{simulation@{simulation}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsimulation_a56f62a4474398476661e7fadf4e8addd}{simulation} (\hyperlink{classnetwork}{network} $\ast$)
+\begin{DoxyCompactList}\small\item\em Class that creates the simulation. \end{DoxyCompactList}\item 
+\hyperlink{classsimulation_ac84df84c712163d5378db4b4fe62bc98}{$\sim$simulation} ()
+\begin{DoxyCompactList}\small\item\em Simulation destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classsimulation_a56832e923bc907f588e5268b9423a57e}{Simulation} ()
+\begin{DoxyCompactList}\small\item\em Runs the simulation. \end{DoxyCompactList}\item 
+\hyperlink{classnetwork}{network} $\ast$ \hyperlink{classsimulation_a9bde1d986780e0980d1de6c57d814532}{get\+Net} ()
+\begin{DoxyCompactList}\small\item\em Returns the updated network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsimulation_a56f62a4474398476661e7fadf4e8addd}\label{classsimulation_a56f62a4474398476661e7fadf4e8addd}} 
+\index{simulation@{simulation}!simulation@{simulation}}
+\index{simulation@{simulation}!simulation@{simulation}}
+\subsubsection{\texorpdfstring{simulation()}{simulation()}}
+{\footnotesize\ttfamily simulation\+::simulation (\begin{DoxyParamCaption}\item[{\hyperlink{classnetwork}{network} $\ast$}]{net }\end{DoxyParamCaption})}
+
+
+
+Class that creates the simulation. 
+
+Runs the simulation\+Simulation constructor
+
+Initialize the simualtion clock to zero
+
+Initialize the Network pointer with a given object 
+\begin{DoxyParams}{Parameters}
+{\em object} & type pointer on network \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsimulation_ac84df84c712163d5378db4b4fe62bc98}\label{classsimulation_ac84df84c712163d5378db4b4fe62bc98}} 
+\index{simulation@{simulation}!````~simulation@{$\sim$simulation}}
+\index{````~simulation@{$\sim$simulation}!simulation@{simulation}}
+\subsubsection{\texorpdfstring{$\sim$simulation()}{~simulation()}}
+{\footnotesize\ttfamily simulation\+::$\sim$simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Simulation destructor. 
+
+Handles the Network pointer proper destruction
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & type pointer on network \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsimulation_a9bde1d986780e0980d1de6c57d814532}\label{classsimulation_a9bde1d986780e0980d1de6c57d814532}} 
+\index{simulation@{simulation}!get\+Net@{get\+Net}}
+\index{get\+Net@{get\+Net}!simulation@{simulation}}
+\subsubsection{\texorpdfstring{get\+Net()}{getNet()}}
+{\footnotesize\ttfamily \hyperlink{classnetwork}{network} $\ast$ simulation\+::get\+Net (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the updated network. 
+
+\begin{DoxyReturn}{Returns}
+object type pointer on network 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsimulation_a56832e923bc907f588e5268b9423a57e}\label{classsimulation_a56832e923bc907f588e5268b9423a57e}} 
+\index{simulation@{simulation}!Simulation@{Simulation}}
+\index{Simulation@{Simulation}!simulation@{simulation}}
+\subsubsection{\texorpdfstring{Simulation()}{Simulation()}}
+{\footnotesize\ttfamily void simulation\+::\+Simulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Runs the simulation. 
+
+Calls the update function of the network for each time steps increment the simulation clock simulation stops when the simulation clock value is equal to the stoptime 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+simulation.\+h\item 
+simulation.\+cpp\end{DoxyCompactItemize}

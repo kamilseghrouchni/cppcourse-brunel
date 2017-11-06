@@ -1,0 +1,225 @@
+\hypertarget{classneurone}{}\section{neurone Class Reference}
+\label{classneurone}\index{neurone@{neurone}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classneurone_a45317bb4df99f1e79b5dd3d5ca7fe641}{neurone} (bool inhib=false)
+\begin{DoxyCompactList}\small\item\em class that represent a Neuron \end{DoxyCompactList}\item 
+\hyperlink{classneurone_a88029788e99ac38981e04959a777a227}{$\sim$neurone} ()
+\begin{DoxyCompactList}\small\item\em Neuron Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classneurone_aa979624b96f5489a952e4ce0457ffdbc}{Update} (bool)
+\begin{DoxyCompactList}\small\item\em Updates the neuron increment the neuroneclock updates the membrane potentiel clears the buffer for each time steps checks if the membrane potentiel is above the threshold if it\textquotesingle{}s the case the function returns true , otherwise it returns false all the time it makes sure to store the time spike and reset potentiel value in case of spike sets the Refractory state depending on the membrane potentiel value if a spike has occur , Refractory is set to True. \end{DoxyCompactList}\item 
+void \hyperlink{classneurone_a374a8ad3b73985a8e5fff35bf5e223f7}{Update\+Potentiel} (bool)
+\begin{DoxyCompactList}\small\item\em Updates the Neuron\textquotesingle{}s membrane potentiel. \end{DoxyCompactList}\item 
+void \hyperlink{classneurone_ae24b7ac8addb3cc7b1b08042066576e6}{Refractory\+Time\+Decrementation} ()
+\begin{DoxyCompactList}\small\item\em Decrementation of the Refractory Time. \end{DoxyCompactList}\item 
+void \hyperlink{classneurone_af1e157df98fa2c15cb70bc50032d39c0}{receive} (long, double)
+\begin{DoxyCompactList}\small\item\em Receive the incoming signal from other Neuron(s) \end{DoxyCompactList}\item 
+std\+::list$<$ long $>$ \hyperlink{classneurone_a36c9b4a43331890178cf8ef774cf53f7}{get\+Times} ()
+\begin{DoxyCompactList}\small\item\em Returns the spikes time lists are more optimized than vectors simulation would run faster. \end{DoxyCompactList}\item 
+double \hyperlink{classneurone_a938d3de8c8ae1c340e72e4a95c54299b}{get\+Potentiel} ()
+\begin{DoxyCompactList}\small\item\em Returns the membrane potentiel value at a certain time for unittests. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{classneurone_a9570ddccdc114d63de75d2c454fbcb52}{get\+Targets} ()
+\begin{DoxyCompactList}\small\item\em Returns all the post-\/synaptic neuron connections. \end{DoxyCompactList}\item 
+std\+::list$<$ double $>$ \hyperlink{classneurone_a2dc85a6664fb7c1ada0283c23460fe1f}{get\+Potentiels} ()
+\begin{DoxyCompactList}\small\item\em Returns the membrane potentiels for the whole simualtion list more optimized. \end{DoxyCompactList}\item 
+void \hyperlink{classneurone_aee16c91befdb31b71067f7e800053d46}{set\+Courant} (double)
+\begin{DoxyCompactList}\small\item\em sets the current \end{DoxyCompactList}\item 
+void \hyperlink{classneurone_a8c25852b6c75970227a57b51665dd5b8}{add\+Targets} (int)
+\begin{DoxyCompactList}\small\item\em add\textquotesingle{}s post-\/synaptic connections \end{DoxyCompactList}\item 
+bool \hyperlink{classneurone_ae3f754b75dc3f92cd9964785d4f6b935}{is\+Inhibitory} () const
+\begin{DoxyCompactList}\small\item\em returns the Neuron Type \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classneurone_a45317bb4df99f1e79b5dd3d5ca7fe641}\label{classneurone_a45317bb4df99f1e79b5dd3d5ca7fe641}} 
+\index{neurone@{neurone}!neurone@{neurone}}
+\index{neurone@{neurone}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{neurone()}{neurone()}}
+{\footnotesize\ttfamily neurone\+::neurone (\begin{DoxyParamCaption}\item[{bool}]{inhib = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+class that represent a Neuron 
+
+Handles the Neuron behaviour\+Neuron Constructor
+
+Initialise the Neuron depending on it\textquotesingle{}s type inhibitory is initialized with a given booleen object all the other parameters are initialized to their initial values
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & type bool \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classneurone_a88029788e99ac38981e04959a777a227}\label{classneurone_a88029788e99ac38981e04959a777a227}} 
+\index{neurone@{neurone}!````~neurone@{$\sim$neurone}}
+\index{````~neurone@{$\sim$neurone}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{$\sim$neurone()}{~neurone()}}
+{\footnotesize\ttfamily neurone\+::$\sim$neurone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Neuron Destructor. 
+
+make sur to clear the time vector 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classneurone_a8c25852b6c75970227a57b51665dd5b8}\label{classneurone_a8c25852b6c75970227a57b51665dd5b8}} 
+\index{neurone@{neurone}!add\+Targets@{add\+Targets}}
+\index{add\+Targets@{add\+Targets}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{add\+Targets()}{addTargets()}}
+{\footnotesize\ttfamily void neurone\+::add\+Targets (\begin{DoxyParamCaption}\item[{int}]{neur }\end{DoxyParamCaption})}
+
+
+
+add\textquotesingle{}s post-\/synaptic connections 
+
+the post-\/synaptic neuron is represented by its position in the Neuron\+System Vector
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & int \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classneurone_a938d3de8c8ae1c340e72e4a95c54299b}\label{classneurone_a938d3de8c8ae1c340e72e4a95c54299b}} 
+\index{neurone@{neurone}!get\+Potentiel@{get\+Potentiel}}
+\index{get\+Potentiel@{get\+Potentiel}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{get\+Potentiel()}{getPotentiel()}}
+{\footnotesize\ttfamily double neurone\+::get\+Potentiel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the membrane potentiel value at a certain time for unittests. 
+
+\begin{DoxyReturn}{Returns}
+object double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classneurone_a2dc85a6664fb7c1ada0283c23460fe1f}\label{classneurone_a2dc85a6664fb7c1ada0283c23460fe1f}} 
+\index{neurone@{neurone}!get\+Potentiels@{get\+Potentiels}}
+\index{get\+Potentiels@{get\+Potentiels}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{get\+Potentiels()}{getPotentiels()}}
+{\footnotesize\ttfamily std\+::list$<$ double $>$ neurone\+::get\+Potentiels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the membrane potentiels for the whole simualtion list more optimized. 
+
+\begin{DoxyReturn}{Returns}
+object list of doubles 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classneurone_a9570ddccdc114d63de75d2c454fbcb52}\label{classneurone_a9570ddccdc114d63de75d2c454fbcb52}} 
+\index{neurone@{neurone}!get\+Targets@{get\+Targets}}
+\index{get\+Targets@{get\+Targets}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{get\+Targets()}{getTargets()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ neurone\+::get\+Targets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns all the post-\/synaptic neuron connections. 
+
+returns all the neurons that receive a signal when the neuron spikes the post-\/synaptic neurons are represented by their position in the Neuron\+System Vector
+
+\begin{DoxyReturn}{Returns}
+object vector of int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classneurone_a36c9b4a43331890178cf8ef774cf53f7}\label{classneurone_a36c9b4a43331890178cf8ef774cf53f7}} 
+\index{neurone@{neurone}!get\+Times@{get\+Times}}
+\index{get\+Times@{get\+Times}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{get\+Times()}{getTimes()}}
+{\footnotesize\ttfamily std\+::list$<$ long $>$ neurone\+::get\+Times (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the spikes time lists are more optimized than vectors simulation would run faster. 
+
+\begin{DoxyReturn}{Returns}
+object list of long 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classneurone_ae3f754b75dc3f92cd9964785d4f6b935}\label{classneurone_ae3f754b75dc3f92cd9964785d4f6b935}} 
+\index{neurone@{neurone}!is\+Inhibitory@{is\+Inhibitory}}
+\index{is\+Inhibitory@{is\+Inhibitory}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{is\+Inhibitory()}{isInhibitory()}}
+{\footnotesize\ttfamily bool neurone\+::is\+Inhibitory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+returns the Neuron Type 
+
+if the Neuron is Inhibitory it will return true , else it will return false
+
+\begin{DoxyReturn}{Returns}
+object booleen 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classneurone_af1e157df98fa2c15cb70bc50032d39c0}\label{classneurone_af1e157df98fa2c15cb70bc50032d39c0}} 
+\index{neurone@{neurone}!receive@{receive}}
+\index{receive@{receive}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily void neurone\+::receive (\begin{DoxyParamCaption}\item[{long}]{t,  }\item[{double}]{J }\end{DoxyParamCaption})}
+
+
+
+Receive the incoming signal from other Neuron(s) 
+
+the post-\/synaptic neuron receives the time simulation time when a neurone has spiked the post-\/synaptic neuron receives the connection weight the function add\textquotesingle{}s it to the buffer with a delay (spike arrival time) 
+\begin{DoxyParams}{Parameters}
+{\em object} & type long ,double \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classneurone_ae24b7ac8addb3cc7b1b08042066576e6}\label{classneurone_ae24b7ac8addb3cc7b1b08042066576e6}} 
+\index{neurone@{neurone}!Refractory\+Time\+Decrementation@{Refractory\+Time\+Decrementation}}
+\index{Refractory\+Time\+Decrementation@{Refractory\+Time\+Decrementation}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{Refractory\+Time\+Decrementation()}{RefractoryTimeDecrementation()}}
+{\footnotesize\ttfamily void neurone\+::\+Refractory\+Time\+Decrementation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Decrementation of the Refractory Time. 
+
+Updates the membrane potentiel according to a given formula add\textquotesingle{}s up any transmitted signal from the ring buffer add\textquotesingle{}up the background noise \mbox{\Hypertarget{classneurone_aee16c91befdb31b71067f7e800053d46}\label{classneurone_aee16c91befdb31b71067f7e800053d46}} 
+\index{neurone@{neurone}!set\+Courant@{set\+Courant}}
+\index{set\+Courant@{set\+Courant}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{set\+Courant()}{setCourant()}}
+{\footnotesize\ttfamily void neurone\+::set\+Courant (\begin{DoxyParamCaption}\item[{double}]{h }\end{DoxyParamCaption})}
+
+
+
+sets the current 
+
+in case we want to run the simulation with out the background noise
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & type double \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classneurone_aa979624b96f5489a952e4ce0457ffdbc}\label{classneurone_aa979624b96f5489a952e4ce0457ffdbc}} 
+\index{neurone@{neurone}!Update@{Update}}
+\index{Update@{Update}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily bool neurone\+::\+Update (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Updates the neuron increment the neuroneclock updates the membrane potentiel clears the buffer for each time steps checks if the membrane potentiel is above the threshold if it\textquotesingle{}s the case the function returns true , otherwise it returns false all the time it makes sure to store the time spike and reset potentiel value in case of spike sets the Refractory state depending on the membrane potentiel value if a spike has occur , Refractory is set to True. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & type booleen to know the flag value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classneurone_a374a8ad3b73985a8e5fff35bf5e223f7}\label{classneurone_a374a8ad3b73985a8e5fff35bf5e223f7}} 
+\index{neurone@{neurone}!Update\+Potentiel@{Update\+Potentiel}}
+\index{Update\+Potentiel@{Update\+Potentiel}!neurone@{neurone}}
+\subsubsection{\texorpdfstring{Update\+Potentiel()}{UpdatePotentiel()}}
+{\footnotesize\ttfamily void neurone\+::\+Update\+Potentiel (\begin{DoxyParamCaption}\item[{bool}]{a }\end{DoxyParamCaption})}
+
+
+
+Updates the Neuron\textquotesingle{}s membrane potentiel. 
+
+Updates the membrane potentiel occriding to a given formula add\textquotesingle{}s up any transmitted signal from the ring buffer add\textquotesingle{}up the background noise 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+neurone.\+h\item 
+neurone.\+cpp\end{DoxyCompactItemize}
