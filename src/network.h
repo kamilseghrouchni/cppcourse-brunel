@@ -9,6 +9,7 @@
 #include <list>
 #include <assert.h>
 #include <iostream>
+#include <random>
 
 typedef std::vector<neurone*> Systemenerveux;
 
@@ -25,8 +26,11 @@ public :
     /** \brief Network constructor
  *
  *creates a Neuronal System depending on the user's will
+ *
  *the background noise of each neuron is flagged with a booleen object
- *Sets the Parameters of the Neuron System
+ *
+ * Sets the Parameters of the Neuron System
+ *
  *Sets the Connections between each Neuron
  *\param object type booleen
  * */
@@ -102,6 +106,12 @@ public :
     void setFlag (bool);
 
 /** \brief  Updates every neuron
+ *  *
+ *
+ * increment the simulation clock
+ *
+ * simulation stops when the simulation clock value is equal to the stoptime
+ *
  *
  * calls the update function of each neuron
  *
@@ -115,13 +125,16 @@ public :
  *
  *
  * */
-    void update (long) ;
+    void update () ;
+
+
 
 
 
 private :
 
 Systemenerveux NeuroneSysteme;       /*!< contains all the neuron pointers */
+    double simulation_clock;
 
 
     bool flag ;

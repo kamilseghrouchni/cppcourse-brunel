@@ -11,9 +11,8 @@ int main()
 
 
 
-    simulation fsim(new network(true));
-    fsim.Simulation();
-
+    network Net(true);
+    Net.update();
     string const nomFichier2("Spike_times.txt");
     ofstream spikes(nomFichier2.c_str());
 
@@ -25,10 +24,10 @@ int main()
     {
 
 
-        for(size_t i(0);i<fsim.getNet()->getSystmeNerveux().size();++i)
+        for(size_t i(0);i<Net.getSystmeNerveux().size();++i)
         {
 
-            for (auto elt : fsim.getNet()->getSystmeNerveux()[i]->getTimes())
+            for (auto elt :Net.getSystmeNerveux()[i]->getTimes())
             {
                 spikes<<elt<<'\t'<<i<<'\n';
 

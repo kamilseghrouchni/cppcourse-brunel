@@ -89,9 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adec3ef8128235b2dc6d4d9df34e211b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetwork.html#adec3ef8128235b2dc6d4d9df34e211b7">setFlag</a> (bool)</td></tr>
 <tr class="memdesc:adec3ef8128235b2dc6d4d9df34e211b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the flag  <a href="#adec3ef8128235b2dc6d4d9df34e211b7">More...</a><br /></td></tr>
 <tr class="separator:adec3ef8128235b2dc6d4d9df34e211b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f606204aa98943271e29f12b95f1ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetwork.html#a89f606204aa98943271e29f12b95f1ff">update</a> (long)</td></tr>
-<tr class="memdesc:a89f606204aa98943271e29f12b95f1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates every neuron.  <a href="#a89f606204aa98943271e29f12b95f1ff">More...</a><br /></td></tr>
-<tr class="separator:a89f606204aa98943271e29f12b95f1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae522c71a541b541797dcf0aa3a4787dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnetwork.html#ae522c71a541b541797dcf0aa3a4787dd">update</a> ()</td></tr>
+<tr class="memdesc:ae522c71a541b541797dcf0aa3a4787dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates every neuron *.  <a href="#ae522c71a541b541797dcf0aa3a4787dd">More...</a><br /></td></tr>
+<tr class="separator:ae522c71a541b541797dcf0aa3a4787dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac44f197a402ad67d1e7b266221bcca4"></a>
@@ -118,7 +118,10 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>creates a Neuronal System depending on the user's will the background noise of each neuron is flagged with a booleen object Sets the Parameters of the Neuron System Sets the Connections between each Neuron </p><dl class="params"><dt>Parameters</dt><dd>
+<p>creates a Neuronal System depending on the user's will</p>
+<p>the background noise of each neuron is flagged with a booleen object</p>
+<p>Sets the Parameters of the Neuron System</p>
+<p>Sets the Connections between each Neuron </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">object</td><td>type booleen </td></tr>
   </table>
@@ -265,8 +268,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a89f606204aa98943271e29f12b95f1ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89f606204aa98943271e29f12b95f1ff">&#9670;&nbsp;</a></span>update()</h2>
+<a id="ae522c71a541b541797dcf0aa3a4787dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae522c71a541b541797dcf0aa3a4787dd">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,14 +277,15 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void network::update </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Updates every neuron. </p>
+<p>Updates every neuron *. </p>
+<p>increment the simulation clock</p>
+<p>simulation stops when the simulation clock value is equal to the stoptime</p>
 <p>calls the update function of each neuron</p>
 <p>if the neuron has spiked , the function transmit the spike to all his targets</p>
 <p>spike transmition involves a neuron function called receive</p>

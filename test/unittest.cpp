@@ -28,8 +28,8 @@ TEST(neurone, PositiveInput)
     neurone* p=new neurone();
     p->setCourant(1);
     bool up;
-    up=p->Update(false);
-    up=p->Update(false);
+    up=p->Update(false,0);
+    up=p->Update(false,0);
     EXPECT_NEAR(20*(1.0-std::exp(-0.1/20)),p->getPotentiel(),0.1);
     p= nullptr;
 
@@ -51,7 +51,7 @@ TEST(neurone, NoSpikesTest)
     bool update;
     for (size_t i(0); i<stopTime; ++i)
     {
-        update=p->Update(false);
+        update=p->Update(false,0);
     }
 
     EXPECT_EQ(p->getTimes().size(),0);
@@ -79,7 +79,7 @@ TEST(neurone, MembranePotentielTest )
     bool update;
     for (size_t i(0); i<stopTime; ++i)
     {
-       update=p->Update(false);
+       update=p->Update(false,0);
     }
 
     EXPECT_NEAR(20,p->getPotentiel(),0.1);
@@ -103,8 +103,8 @@ TEST(neurone, MembranePotentielTest )
 TEST(simulation , Amount_Connections_For_Randomly_Chosen_Neuron )
 {
 
-    simulation sim(new network(true));
-    sim.Simulation();
+   network Net(true);
+    Net.update();
     double Connections(0) ;
     double ExiConnections(0);
     double InhiConnections(0);
@@ -112,9 +112,9 @@ TEST(simulation , Amount_Connections_For_Randomly_Chosen_Neuron )
     std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
     std::uniform_int_distribution<> dis(0,s::Max_Value_Connection);
        double index(dis(gen));
-    for (size_t j(0);j<sim.getNet()->getSystmeNerveux().size();++j )
+    for (size_t j(0);j<Net.getSystmeNerveux().size();++j )
         {
-            for (auto elt : sim.getNet()->getSystmeNerveux()[j]->getTargets())
+            for (auto elt : Net.getSystmeNerveux()[j]->getTargets())
             {
                 if (elt == index)
                 {
@@ -147,13 +147,13 @@ TEST(network,AmountSpikePerNeuron)
 
 {
 
-    simulation sim(new network(true));
-    sim.Simulation();
+    network Net(true);
+    Net.update();
     double average(0);
 
     for (size_t i(0) ; i<12500 ; ++i)
     {
-     average+=sim.getNet()->getSystmeNerveux()[i]->getTimes().size();
+     average+=Net.getSystmeNerveux()[i]->getTimes().size();
     }
     average=average/(s::Numb_Neurons);
 

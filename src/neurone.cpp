@@ -30,7 +30,7 @@ neurone:: ~neurone(){
     times.clear();
 }
 
-bool neurone::Update(bool val) {
+bool neurone::Update(bool val ,double poiss) {
 
     bool spiked = false;
 //checking membrane potentiel value
@@ -45,7 +45,7 @@ bool neurone::Update(bool val) {
         assert(potentiel<=0.0);
         RefractoryTimeDecrementation();
     } else {
-        UpdatePotentiel(val);
+        UpdatePotentiel(val,poiss);
 
     }
 
@@ -76,12 +76,10 @@ void neurone::RefractoryTimeDecrementation()
 }
 
 
-void neurone::UpdatePotentiel(bool a)
+void neurone::UpdatePotentiel(bool a,double poisson )
 {
 
-    static std::random_device rd;
-    static std::mt19937 gen(rd());
-    static std::poisson_distribution<> poisson(s::Vext*s::SIMTIME);
+
 
     potentiel = exp((-1.0) * (s::SIMTIME / taw)) * potentiel
                 + Iext * s::RESISTANCE * (1.0 - exp((-1.0) * ( s::SIMTIME / taw)));
@@ -92,7 +90,7 @@ void neurone::UpdatePotentiel(bool a)
 
     if (a) {
         //adding the background noise
-        potentiel += poisson(gen)*s::Excitatory_weight;
+        potentiel += poisson*s::Excitatory_weight;
     }
 
 }

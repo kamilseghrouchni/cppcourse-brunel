@@ -17,8 +17,8 @@ void \hyperlink{classnetwork_a6dda83ae384498619f0aa876639b2c25}{set\+Parameters}
 \begin{DoxyCompactList}\small\item\em set the Parameters of each Neurons \end{DoxyCompactList}\item 
 void \hyperlink{classnetwork_adec3ef8128235b2dc6d4d9df34e211b7}{set\+Flag} (bool)
 \begin{DoxyCompactList}\small\item\em sets the flag \end{DoxyCompactList}\item 
-void \hyperlink{classnetwork_a89f606204aa98943271e29f12b95f1ff}{update} (long)
-\begin{DoxyCompactList}\small\item\em Updates every neuron. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classnetwork_ae522c71a541b541797dcf0aa3a4787dd}{update} ()
+\begin{DoxyCompactList}\small\item\em Updates every neuron $\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -39,7 +39,13 @@ Handles Neurons and their connections
 {\em Neurone\+System} & vectors that contains pointers of all the Neurons simulation\+Network constructor\\
 \hline
 \end{DoxyParams}
-creates a Neuronal System depending on the user\textquotesingle{}s will the background noise of each neuron is flagged with a booleen object Sets the Parameters of the Neuron System Sets the Connections between each Neuron 
+creates a Neuronal System depending on the user\textquotesingle{}s will
+
+the background noise of each neuron is flagged with a booleen object
+
+Sets the Parameters of the Neuron System
+
+Sets the Connections between each Neuron 
 \begin{DoxyParams}{Parameters}
 {\em object} & type booleen \\
 \hline
@@ -143,15 +149,19 @@ set the Parameters of each Neurons
 
 depending on the flag value , the function will either set the current to O
 
-or to an input \mbox{\Hypertarget{classnetwork_a89f606204aa98943271e29f12b95f1ff}\label{classnetwork_a89f606204aa98943271e29f12b95f1ff}} 
+or to an input \mbox{\Hypertarget{classnetwork_ae522c71a541b541797dcf0aa3a4787dd}\label{classnetwork_ae522c71a541b541797dcf0aa3a4787dd}} 
 \index{network@{network}!update@{update}}
 \index{update@{update}!network@{network}}
 \subsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily void network\+::update (\begin{DoxyParamCaption}\item[{long}]{t }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void network\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Updates every neuron. 
+Updates every neuron $\ast$. 
+
+increment the simulation clock
+
+simulation stops when the simulation clock value is equal to the stoptime
 
 calls the update function of each neuron
 

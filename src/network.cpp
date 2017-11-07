@@ -11,7 +11,7 @@ network::network(bool val)
     setNeuronalSysteme();
     setParameters();
     setConnections();
-
+    simulation_clock=0;
 }
 
 network:: ~network()
@@ -31,36 +31,46 @@ network:: ~network()
 }
 
 
-void network::update(long t)
+void network::update()
 {
+
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    static std::poisson_distribution<> poisson(s::Vext*s::SIMTIME);
+
+    if (simulation_clock==0)
+    {
+        std::cout<<"Running..."<<std::endl;
+
+    }
     bool spike=false;
 
 
-      for (size_t i(0); i<NeuroneSysteme.size();++i)
-      {
-          //Updates each Neuron
-        spike=NeuroneSysteme[i]->Update(flag);
+    while (simulation_clock<=s::STOPTIME)
+    {
 
 
+        for (size_t i(0); i < NeuroneSysteme.size(); ++i) {
+            //Updates each Neuron
+            spike = NeuroneSysteme[i]->Update(flag, poisson(gen));
 
-        if (spike)
-        {
 
-            assert(NeuroneSysteme[i]->getPotentiel()==s::INITIAL_POTENTIAL);
+            if (spike) {
 
-            // the post-synaptic connection weight takes the correct value depending on Neuron type
-            double J = NeuroneSysteme[i]->isInhibitory() ? s::Inhibitory_weight : s::Excitatory_weight;
+                assert(NeuroneSysteme[i]->getPotentiel() == s::INITIAL_POTENTIAL);
 
-            //look up for the neuron post-synaptic connections
-            for (auto& target : NeuroneSysteme[i]->getTargets())
-            {
+                // the post-synaptic connection weight takes the correct value depending on Neuron type
+                double J = NeuroneSysteme[i]->isInhibitory() ? s::Inhibitory_weight : s::Excitatory_weight;
 
-                NeuroneSysteme[target]->receive(t, J);
+                //look up for the neuron post-synaptic connections
+                for (auto &target : NeuroneSysteme[i]->getTargets()) {
+
+                    NeuroneSysteme[target]->receive(simulation_clock, J);
+                }
             }
         }
-
+        ++simulation_clock;
     }
-
 
 
 }

@@ -19,12 +19,15 @@ class neurone {
 /** \brief  class that represent a Neuron
  *
  *Handles the Neuron behaviour
+ *
  * */
 public :
 /** \brief  Neuron Constructor
  *
  *Initialise the Neuron depending on it's type
+ *
  * inhibitory is initialized with a given booleen object
+ *
  * all the other parameters are initialized to their initial values
  *
  *\param object type bool
@@ -41,60 +44,80 @@ public :
 /** \brief  Updates the  neuron
  *increment the neuroneclock
  * updates the membrane potentiel
+ *
+ *
  * clears the buffer for each time steps
- *checks if the membrane potentiel is above the threshold
+ *
+ * checks if the membrane potentiel is above the threshold
+ *
  * if it's the case the function returns true , otherwise it returns false all the time
+ *
  * it makes sure to store the time spike and reset potentiel value in case of spike
+ *
  *sets the Refractory state depending on the membrane potentiel value
+ *
  * if a spike has occur , Refractory is set to True
  *
  * \param object type booleen  to know the flag value
  * */
-    bool Update(bool);
+    bool Update(bool,double );
 
 /** \brief  Updates the Neuron's membrane potentiel
  *
- *Updates the membrane potentiel occriding to a given formula
+ *
+ * Updates the membrane potentiel occroding to a given formula
+ *
  * add's up any transmitted signal from the ring buffer
- * add'up the background noise
+ *
+ * add'up the background noise taken in parameter
+ *
+ * \param object type bool and double
  * */
-    void UpdatePotentiel(bool);
+    void UpdatePotentiel(bool,double );
 
 /** \brief  Decrementation of the Refractory Time
  *
- *Updates the membrane potentiel according to a given formula
- * add's up any transmitted signal from the ring buffer
- * add'up the background noise
+ *decrement the refractory time at each simulation step
+ *
  * */
     void RefractoryTimeDecrementation();
 
 /** \brief  Receive the incoming signal from other Neuron(s)
  *
  * the post-synaptic neuron receives the time simulation time when a neurone has spiked
+ *
  * the post-synaptic neuron  receives the connection weight
+ *
  * the function add's it to the buffer with a delay (spike arrival time)
- *\param object type long ,double
+ *
+ * \param object type long ,double
  * */
     void receive (long,double);
 
 
 
 /** \brief  Returns the spikes time
- *lists are more optimized than vectors
+ *
+ * lists are more optimized than vectors
+ *
  * simulation would run faster
+ *
  *\return object list of long
  * */
     std::list<long> getTimes();
 
 /** \brief  Returns the membrane  potentiel value at a certain time
- *for unittests
- *\return object double
+ *
+ * for unittests
+ *
+ * \return object double
  * */
     double getPotentiel();
 
 /** \brief  Returns all the post-synaptic neuron connections
  *
  * returns all the neurons that receive a signal when the neuron spikes
+ *
  * the post-synaptic neurons are represented by their position in the NeuronSystem Vector
  *
  *\return object vector of int
@@ -102,7 +125,11 @@ public :
     std::vector<int> getTargets() ;
 
 /** \brief  Returns the membrane potentiels for the whole simualtion
-*list more optimized
+*
+*
+*
+*
+* list more optimized
 *\return object list of doubles
 * */std::list<double>getPotentiels();
 

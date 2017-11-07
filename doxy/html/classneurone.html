@@ -74,12 +74,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a88029788e99ac38981e04959a777a227"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#a88029788e99ac38981e04959a777a227">~neurone</a> ()</td></tr>
 <tr class="memdesc:a88029788e99ac38981e04959a777a227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Neuron Destructor.  <a href="#a88029788e99ac38981e04959a777a227">More...</a><br /></td></tr>
 <tr class="separator:a88029788e99ac38981e04959a777a227"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa979624b96f5489a952e4ce0457ffdbc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#aa979624b96f5489a952e4ce0457ffdbc">Update</a> (bool)</td></tr>
-<tr class="memdesc:aa979624b96f5489a952e4ce0457ffdbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the neuron increment the neuroneclock updates the membrane potentiel clears the buffer for each time steps checks if the membrane potentiel is above the threshold if it's the case the function returns true , otherwise it returns false all the time it makes sure to store the time spike and reset potentiel value in case of spike sets the Refractory state depending on the membrane potentiel value if a spike has occur , Refractory is set to True.  <a href="#aa979624b96f5489a952e4ce0457ffdbc">More...</a><br /></td></tr>
-<tr class="separator:aa979624b96f5489a952e4ce0457ffdbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a374a8ad3b73985a8e5fff35bf5e223f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#a374a8ad3b73985a8e5fff35bf5e223f7">UpdatePotentiel</a> (bool)</td></tr>
-<tr class="memdesc:a374a8ad3b73985a8e5fff35bf5e223f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the Neuron's membrane potentiel.  <a href="#a374a8ad3b73985a8e5fff35bf5e223f7">More...</a><br /></td></tr>
-<tr class="separator:a374a8ad3b73985a8e5fff35bf5e223f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d86742f8c3cb66b6e223f5588dd84de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#a0d86742f8c3cb66b6e223f5588dd84de">Update</a> (bool, double)</td></tr>
+<tr class="memdesc:a0d86742f8c3cb66b6e223f5588dd84de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the neuron increment the neuroneclock updates the membrane potentiel.  <a href="#a0d86742f8c3cb66b6e223f5588dd84de">More...</a><br /></td></tr>
+<tr class="separator:a0d86742f8c3cb66b6e223f5588dd84de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82853256cf518a4539e3ead03d0a0bf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#a82853256cf518a4539e3ead03d0a0bf6">UpdatePotentiel</a> (bool, double)</td></tr>
+<tr class="memdesc:a82853256cf518a4539e3ead03d0a0bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the Neuron's membrane potentiel.  <a href="#a82853256cf518a4539e3ead03d0a0bf6">More...</a><br /></td></tr>
+<tr class="separator:a82853256cf518a4539e3ead03d0a0bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae24b7ac8addb3cc7b1b08042066576e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#ae24b7ac8addb3cc7b1b08042066576e6">RefractoryTimeDecrementation</a> ()</td></tr>
 <tr class="memdesc:ae24b7ac8addb3cc7b1b08042066576e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrementation of the Refractory Time.  <a href="#ae24b7ac8addb3cc7b1b08042066576e6">More...</a><br /></td></tr>
 <tr class="separator:ae24b7ac8addb3cc7b1b08042066576e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -87,16 +87,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af1e157df98fa2c15cb70bc50032d39c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive the incoming signal from other Neuron(s)  <a href="#af1e157df98fa2c15cb70bc50032d39c0">More...</a><br /></td></tr>
 <tr class="separator:af1e157df98fa2c15cb70bc50032d39c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36c9b4a43331890178cf8ef774cf53f7"><td class="memItemLeft" align="right" valign="top">std::list&lt; long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#a36c9b4a43331890178cf8ef774cf53f7">getTimes</a> ()</td></tr>
-<tr class="memdesc:a36c9b4a43331890178cf8ef774cf53f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the spikes time lists are more optimized than vectors simulation would run faster.  <a href="#a36c9b4a43331890178cf8ef774cf53f7">More...</a><br /></td></tr>
+<tr class="memdesc:a36c9b4a43331890178cf8ef774cf53f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the spikes time.  <a href="#a36c9b4a43331890178cf8ef774cf53f7">More...</a><br /></td></tr>
 <tr class="separator:a36c9b4a43331890178cf8ef774cf53f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a938d3de8c8ae1c340e72e4a95c54299b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#a938d3de8c8ae1c340e72e4a95c54299b">getPotentiel</a> ()</td></tr>
-<tr class="memdesc:a938d3de8c8ae1c340e72e4a95c54299b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the membrane potentiel value at a certain time for unittests.  <a href="#a938d3de8c8ae1c340e72e4a95c54299b">More...</a><br /></td></tr>
+<tr class="memdesc:a938d3de8c8ae1c340e72e4a95c54299b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the membrane potentiel value at a certain time.  <a href="#a938d3de8c8ae1c340e72e4a95c54299b">More...</a><br /></td></tr>
 <tr class="separator:a938d3de8c8ae1c340e72e4a95c54299b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9570ddccdc114d63de75d2c454fbcb52"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#a9570ddccdc114d63de75d2c454fbcb52">getTargets</a> ()</td></tr>
 <tr class="memdesc:a9570ddccdc114d63de75d2c454fbcb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all the post-synaptic neuron connections.  <a href="#a9570ddccdc114d63de75d2c454fbcb52">More...</a><br /></td></tr>
 <tr class="separator:a9570ddccdc114d63de75d2c454fbcb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dc85a6664fb7c1ada0283c23460fe1f"><td class="memItemLeft" align="right" valign="top">std::list&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#a2dc85a6664fb7c1ada0283c23460fe1f">getPotentiels</a> ()</td></tr>
-<tr class="memdesc:a2dc85a6664fb7c1ada0283c23460fe1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the membrane potentiels for the whole simualtion list more optimized.  <a href="#a2dc85a6664fb7c1ada0283c23460fe1f">More...</a><br /></td></tr>
+<tr class="memdesc:a2dc85a6664fb7c1ada0283c23460fe1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the membrane potentiels for the whole simualtion.  <a href="#a2dc85a6664fb7c1ada0283c23460fe1f">More...</a><br /></td></tr>
 <tr class="separator:a2dc85a6664fb7c1ada0283c23460fe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee16c91befdb31b71067f7e800053d46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classneurone.html#aee16c91befdb31b71067f7e800053d46">setCourant</a> (double)</td></tr>
 <tr class="memdesc:aee16c91befdb31b71067f7e800053d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the current  <a href="#aee16c91befdb31b71067f7e800053d46">More...</a><br /></td></tr>
@@ -127,7 +127,9 @@ Public Member Functions</h2></td></tr>
 
 <p>class that represent a Neuron </p>
 <p>Handles the Neuron behaviourNeuron Constructor</p>
-<p>Initialise the Neuron depending on it's type inhibitory is initialized with a given booleen object all the other parameters are initialized to their initial values</p>
+<p>Initialise the Neuron depending on it's type</p>
+<p>inhibitory is initialized with a given booleen object</p>
+<p>all the other parameters are initialized to their initial values</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">object</td><td>type bool </td></tr>
@@ -200,7 +202,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the membrane potentiel value at a certain time for unittests. </p>
+<p>Returns the membrane potentiel value at a certain time. </p>
+<p>for unittests</p>
 <dl class="section return"><dt>Returns</dt><dd>object double </dd></dl>
 
 </div>
@@ -220,8 +223,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the membrane potentiels for the whole simualtion list more optimized. </p>
-<dl class="section return"><dt>Returns</dt><dd>object list of doubles </dd></dl>
+<p>Returns the membrane potentiels for the whole simualtion. </p>
+<p>list more optimized </p><dl class="section return"><dt>Returns</dt><dd>object list of doubles </dd></dl>
 
 </div>
 </div>
@@ -241,7 +244,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns all the post-synaptic neuron connections. </p>
-<p>returns all the neurons that receive a signal when the neuron spikes the post-synaptic neurons are represented by their position in the NeuronSystem Vector</p>
+<p>returns all the neurons that receive a signal when the neuron spikes</p>
+<p>the post-synaptic neurons are represented by their position in the NeuronSystem Vector</p>
 <dl class="section return"><dt>Returns</dt><dd>object vector of int </dd></dl>
 
 </div>
@@ -261,7 +265,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the spikes time lists are more optimized than vectors simulation would run faster. </p>
+<p>Returns the spikes time. </p>
+<p>lists are more optimized than vectors</p>
+<p>simulation would run faster</p>
 <dl class="section return"><dt>Returns</dt><dd>object list of long </dd></dl>
 
 </div>
@@ -314,7 +320,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Receive the incoming signal from other Neuron(s) </p>
-<p>the post-synaptic neuron receives the time simulation time when a neurone has spiked the post-synaptic neuron receives the connection weight the function add's it to the buffer with a delay (spike arrival time) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>the post-synaptic neuron receives the time simulation time when a neurone has spiked</p>
+<p>the post-synaptic neuron receives the connection weight</p>
+<p>the function add's it to the buffer with a delay (spike arrival time)</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">object</td><td>type long ,double </td></tr>
   </table>
@@ -339,7 +348,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Decrementation of the Refractory Time. </p>
-<p>Updates the membrane potentiel according to a given formula add's up any transmitted signal from the ring buffer add'up the background noise </p>
+<p>decrement the refractory time at each simulation step </p>
 
 </div>
 </div>
@@ -370,8 +379,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa979624b96f5489a952e4ce0457ffdbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa979624b96f5489a952e4ce0457ffdbc">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="a0d86742f8c3cb66b6e223f5588dd84de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d86742f8c3cb66b6e223f5588dd84de">&#9670;&nbsp;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,13 +389,29 @@ Public Member Functions</h2></td></tr>
           <td class="memname">bool neurone::Update </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>poiss</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Updates the neuron increment the neuroneclock updates the membrane potentiel clears the buffer for each time steps checks if the membrane potentiel is above the threshold if it's the case the function returns true , otherwise it returns false all the time it makes sure to store the time spike and reset potentiel value in case of spike sets the Refractory state depending on the membrane potentiel value if a spike has occur , Refractory is set to True. </p>
+<p>Updates the neuron increment the neuroneclock updates the membrane potentiel. </p>
+<p>clears the buffer for each time steps</p>
+<p>checks if the membrane potentiel is above the threshold</p>
+<p>if it's the case the function returns true , otherwise it returns false all the time</p>
+<p>it makes sure to store the time spike and reset potentiel value in case of spike</p>
+<p>sets the Refractory state depending on the membrane potentiel value</p>
+<p>if a spike has occur , Refractory is set to True</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">object</td><td>type booleen to know the flag value </td></tr>
@@ -396,8 +421,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a374a8ad3b73985a8e5fff35bf5e223f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a374a8ad3b73985a8e5fff35bf5e223f7">&#9670;&nbsp;</a></span>UpdatePotentiel()</h2>
+<a id="a82853256cf518a4539e3ead03d0a0bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82853256cf518a4539e3ead03d0a0bf6">&#9670;&nbsp;</a></span>UpdatePotentiel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,14 +431,32 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void neurone::UpdatePotentiel </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>a</em></td><td>)</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>poisson</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Updates the Neuron's membrane potentiel. </p>
-<p>Updates the membrane potentiel occriding to a given formula add's up any transmitted signal from the ring buffer add'up the background noise </p>
+<p>Updates the membrane potentiel occroding to a given formula</p>
+<p>add's up any transmitted signal from the ring buffer</p>
+<p>add'up the background noise taken in parameter</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>type bool and double </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

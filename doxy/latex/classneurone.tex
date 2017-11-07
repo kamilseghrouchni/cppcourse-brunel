@@ -7,22 +7,22 @@
 \begin{DoxyCompactList}\small\item\em class that represent a Neuron \end{DoxyCompactList}\item 
 \hyperlink{classneurone_a88029788e99ac38981e04959a777a227}{$\sim$neurone} ()
 \begin{DoxyCompactList}\small\item\em Neuron Destructor. \end{DoxyCompactList}\item 
-bool \hyperlink{classneurone_aa979624b96f5489a952e4ce0457ffdbc}{Update} (bool)
-\begin{DoxyCompactList}\small\item\em Updates the neuron increment the neuroneclock updates the membrane potentiel clears the buffer for each time steps checks if the membrane potentiel is above the threshold if it\textquotesingle{}s the case the function returns true , otherwise it returns false all the time it makes sure to store the time spike and reset potentiel value in case of spike sets the Refractory state depending on the membrane potentiel value if a spike has occur , Refractory is set to True. \end{DoxyCompactList}\item 
-void \hyperlink{classneurone_a374a8ad3b73985a8e5fff35bf5e223f7}{Update\+Potentiel} (bool)
+bool \hyperlink{classneurone_a0d86742f8c3cb66b6e223f5588dd84de}{Update} (bool, double)
+\begin{DoxyCompactList}\small\item\em Updates the neuron increment the neuroneclock updates the membrane potentiel. \end{DoxyCompactList}\item 
+void \hyperlink{classneurone_a82853256cf518a4539e3ead03d0a0bf6}{Update\+Potentiel} (bool, double)
 \begin{DoxyCompactList}\small\item\em Updates the Neuron\textquotesingle{}s membrane potentiel. \end{DoxyCompactList}\item 
 void \hyperlink{classneurone_ae24b7ac8addb3cc7b1b08042066576e6}{Refractory\+Time\+Decrementation} ()
 \begin{DoxyCompactList}\small\item\em Decrementation of the Refractory Time. \end{DoxyCompactList}\item 
 void \hyperlink{classneurone_af1e157df98fa2c15cb70bc50032d39c0}{receive} (long, double)
 \begin{DoxyCompactList}\small\item\em Receive the incoming signal from other Neuron(s) \end{DoxyCompactList}\item 
 std\+::list$<$ long $>$ \hyperlink{classneurone_a36c9b4a43331890178cf8ef774cf53f7}{get\+Times} ()
-\begin{DoxyCompactList}\small\item\em Returns the spikes time lists are more optimized than vectors simulation would run faster. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the spikes time. \end{DoxyCompactList}\item 
 double \hyperlink{classneurone_a938d3de8c8ae1c340e72e4a95c54299b}{get\+Potentiel} ()
-\begin{DoxyCompactList}\small\item\em Returns the membrane potentiel value at a certain time for unittests. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the membrane potentiel value at a certain time. \end{DoxyCompactList}\item 
 std\+::vector$<$ int $>$ \hyperlink{classneurone_a9570ddccdc114d63de75d2c454fbcb52}{get\+Targets} ()
 \begin{DoxyCompactList}\small\item\em Returns all the post-\/synaptic neuron connections. \end{DoxyCompactList}\item 
 std\+::list$<$ double $>$ \hyperlink{classneurone_a2dc85a6664fb7c1ada0283c23460fe1f}{get\+Potentiels} ()
-\begin{DoxyCompactList}\small\item\em Returns the membrane potentiels for the whole simualtion list more optimized. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the membrane potentiels for the whole simualtion. \end{DoxyCompactList}\item 
 void \hyperlink{classneurone_aee16c91befdb31b71067f7e800053d46}{set\+Courant} (double)
 \begin{DoxyCompactList}\small\item\em sets the current \end{DoxyCompactList}\item 
 void \hyperlink{classneurone_a8c25852b6c75970227a57b51665dd5b8}{add\+Targets} (int)
@@ -44,7 +44,11 @@ class that represent a Neuron
 
 Handles the Neuron behaviour\+Neuron Constructor
 
-Initialise the Neuron depending on it\textquotesingle{}s type inhibitory is initialized with a given booleen object all the other parameters are initialized to their initial values
+Initialise the Neuron depending on it\textquotesingle{}s type
+
+inhibitory is initialized with a given booleen object
+
+all the other parameters are initialized to their initial values
 
 
 \begin{DoxyParams}{Parameters}
@@ -89,7 +93,9 @@ the post-\/synaptic neuron is represented by its position in the Neuron\+System 
 
 
 
-Returns the membrane potentiel value at a certain time for unittests. 
+Returns the membrane potentiel value at a certain time. 
+
+for unittests
 
 \begin{DoxyReturn}{Returns}
 object double 
@@ -102,9 +108,9 @@ object double
 
 
 
-Returns the membrane potentiels for the whole simualtion list more optimized. 
+Returns the membrane potentiels for the whole simualtion. 
 
-\begin{DoxyReturn}{Returns}
+list more optimized \begin{DoxyReturn}{Returns}
 object list of doubles 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classneurone_a9570ddccdc114d63de75d2c454fbcb52}\label{classneurone_a9570ddccdc114d63de75d2c454fbcb52}} 
@@ -117,7 +123,9 @@ object list of doubles
 
 Returns all the post-\/synaptic neuron connections. 
 
-returns all the neurons that receive a signal when the neuron spikes the post-\/synaptic neurons are represented by their position in the Neuron\+System Vector
+returns all the neurons that receive a signal when the neuron spikes
+
+the post-\/synaptic neurons are represented by their position in the Neuron\+System Vector
 
 \begin{DoxyReturn}{Returns}
 object vector of int 
@@ -130,7 +138,11 @@ object vector of int
 
 
 
-Returns the spikes time lists are more optimized than vectors simulation would run faster. 
+Returns the spikes time. 
+
+lists are more optimized than vectors
+
+simulation would run faster
 
 \begin{DoxyReturn}{Returns}
 object list of long 
@@ -160,7 +172,13 @@ object booleen
 
 Receive the incoming signal from other Neuron(s) 
 
-the post-\/synaptic neuron receives the time simulation time when a neurone has spiked the post-\/synaptic neuron receives the connection weight the function add\textquotesingle{}s it to the buffer with a delay (spike arrival time) 
+the post-\/synaptic neuron receives the time simulation time when a neurone has spiked
+
+the post-\/synaptic neuron receives the connection weight
+
+the function add\textquotesingle{}s it to the buffer with a delay (spike arrival time)
+
+
 \begin{DoxyParams}{Parameters}
 {\em object} & type long ,double \\
 \hline
@@ -175,7 +193,7 @@ the post-\/synaptic neuron receives the time simulation time when a neurone has 
 
 Decrementation of the Refractory Time. 
 
-Updates the membrane potentiel according to a given formula add\textquotesingle{}s up any transmitted signal from the ring buffer add\textquotesingle{}up the background noise \mbox{\Hypertarget{classneurone_aee16c91befdb31b71067f7e800053d46}\label{classneurone_aee16c91befdb31b71067f7e800053d46}} 
+decrement the refractory time at each simulation step \mbox{\Hypertarget{classneurone_aee16c91befdb31b71067f7e800053d46}\label{classneurone_aee16c91befdb31b71067f7e800053d46}} 
 \index{neurone@{neurone}!set\+Courant@{set\+Courant}}
 \index{set\+Courant@{set\+Courant}!neurone@{neurone}}
 \subsubsection{\texorpdfstring{set\+Courant()}{setCourant()}}
@@ -192,32 +210,55 @@ in case we want to run the simulation with out the background noise
 {\em object} & type double \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classneurone_aa979624b96f5489a952e4ce0457ffdbc}\label{classneurone_aa979624b96f5489a952e4ce0457ffdbc}} 
+\mbox{\Hypertarget{classneurone_a0d86742f8c3cb66b6e223f5588dd84de}\label{classneurone_a0d86742f8c3cb66b6e223f5588dd84de}} 
 \index{neurone@{neurone}!Update@{Update}}
 \index{Update@{Update}!neurone@{neurone}}
 \subsubsection{\texorpdfstring{Update()}{Update()}}
-{\footnotesize\ttfamily bool neurone\+::\+Update (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool neurone\+::\+Update (\begin{DoxyParamCaption}\item[{bool}]{val,  }\item[{double}]{poiss }\end{DoxyParamCaption})}
 
 
 
-Updates the neuron increment the neuroneclock updates the membrane potentiel clears the buffer for each time steps checks if the membrane potentiel is above the threshold if it\textquotesingle{}s the case the function returns true , otherwise it returns false all the time it makes sure to store the time spike and reset potentiel value in case of spike sets the Refractory state depending on the membrane potentiel value if a spike has occur , Refractory is set to True. 
+Updates the neuron increment the neuroneclock updates the membrane potentiel. 
+
+clears the buffer for each time steps
+
+checks if the membrane potentiel is above the threshold
+
+if it\textquotesingle{}s the case the function returns true , otherwise it returns false all the time
+
+it makes sure to store the time spike and reset potentiel value in case of spike
+
+sets the Refractory state depending on the membrane potentiel value
+
+if a spike has occur , Refractory is set to True
 
 
 \begin{DoxyParams}{Parameters}
 {\em object} & type booleen to know the flag value \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classneurone_a374a8ad3b73985a8e5fff35bf5e223f7}\label{classneurone_a374a8ad3b73985a8e5fff35bf5e223f7}} 
+\mbox{\Hypertarget{classneurone_a82853256cf518a4539e3ead03d0a0bf6}\label{classneurone_a82853256cf518a4539e3ead03d0a0bf6}} 
 \index{neurone@{neurone}!Update\+Potentiel@{Update\+Potentiel}}
 \index{Update\+Potentiel@{Update\+Potentiel}!neurone@{neurone}}
 \subsubsection{\texorpdfstring{Update\+Potentiel()}{UpdatePotentiel()}}
-{\footnotesize\ttfamily void neurone\+::\+Update\+Potentiel (\begin{DoxyParamCaption}\item[{bool}]{a }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void neurone\+::\+Update\+Potentiel (\begin{DoxyParamCaption}\item[{bool}]{a,  }\item[{double}]{poisson }\end{DoxyParamCaption})}
 
 
 
 Updates the Neuron\textquotesingle{}s membrane potentiel. 
 
-Updates the membrane potentiel occriding to a given formula add\textquotesingle{}s up any transmitted signal from the ring buffer add\textquotesingle{}up the background noise 
+Updates the membrane potentiel occroding to a given formula
+
+add\textquotesingle{}s up any transmitted signal from the ring buffer
+
+add\textquotesingle{}up the background noise taken in parameter
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & type bool and double \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
