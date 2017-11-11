@@ -11,3 +11,8 @@ go to this folder with your terminale
 run the command cmake .. in this folder 
 run the command make 
 than ./nameproject (here fproject)
+
+
+note : 
+on my computer , the simulation take 1 minute for 1s of simulation. Once tested on VM's , it takes a more time
+'
