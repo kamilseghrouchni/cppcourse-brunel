@@ -2,7 +2,7 @@
 // Created by kamil seghrouchni on 16/10/2017.
 //
 #include <iostream>
-#include "../src/simulation.h"
+#include "../src/network.h"
 #include "googletest/include/gtest/gtest.h"
 #include <random>
 #include <cmath>

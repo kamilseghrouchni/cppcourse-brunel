@@ -1,7 +1,6 @@
 #include <iostream>
-#include "simulation.h"
+#include "network.h"
 #include <fstream>
-#include <random>
 
 using namespace std;
 
@@ -32,26 +31,6 @@ int main()
                 spikes<<elt<<'\t'<<i<<'\n';
 
             }
-
-
-
-
-            /*
-            std::random_device rd;  //Will be used to obtain a seed for the random number engine
-            std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
-            std::uniform_int_distribution<> dis(s::Min_Value_Connection,s::Max_Value_Connection);
-            cout<<"writing spikes"<<endl;
-            for (unsigned int i (0); i<50; ++i)
-            {
-                double id(dis(gen));
-
-                for (auto elt : network.getSystmeNerveux()[id]->getTimes())
-                {
-                    spikes<<elt<<"    "<<id<<std::endl;
-
-                }
-      */
-
 
         }
 
