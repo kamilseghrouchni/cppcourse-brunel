@@ -6,7 +6,6 @@
 #define FPROJECT_NEURONE_H
 
 
-#include <dtrace.h>
 #include <vector>
 #include <array>
 #include <cmath>
